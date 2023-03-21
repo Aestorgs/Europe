@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "articles",
+  "info": {
+    "singularName": "article",
+    "pluralName": "articles",
+    "displayName": "Article",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Titre": {
+      "type": "text"
+    },
+    "ContenuCourt": {
+      "type": "string"
+    },
+    "ContenuLong": {
+      "type": "text"
+    },
+    "Like": {
+      "type": "boolean"
+    },
+    "Lat": {
+      "type": "decimal"
+    },
+    "Lont": {
+      "type": "decimal"
+    },
+    "commentaire": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::commentaire.commentaire"
+    },
+    "media": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::med.med"
+    }
+  }
+}
