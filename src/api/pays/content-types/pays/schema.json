@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "payss",
+  "info": {
+    "singularName": "pays",
+    "pluralName": "payss",
+    "displayName": "pays"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nom": {
+      "type": "string"
+    },
+    "themes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::theme.theme",
+      "mappedBy": "payss"
+    },
+    "articles": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::article.article",
+      "mappedBy": "payss"
+    }
+  }
+}

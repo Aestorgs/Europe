@@ -4,7 +4,7 @@
   "info": {
     "singularName": "med",
     "pluralName": "meds",
-    "displayName": "Media",
+    "displayName": "media",
     "description": ""
   },
   "options": {
@@ -12,27 +12,27 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Type": {
-      "type": "media",
-      "multiple": true,
-      "required": false,
+    "nom": {
+      "type": "string"
+    },
+    "articles": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::article.article",
+      "inversedBy": "medias"
+    },
+    "type": {
+      "type": "string"
+    },
+    "media": {
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ]
-    },
-    "Url": {
-      "type": "string"
-    },
-    "Name": {
-      "type": "string"
-    },
-    "article": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::article.article"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

@@ -4,7 +4,7 @@
   "info": {
     "singularName": "question",
     "pluralName": "questions",
-    "displayName": "Question",
+    "displayName": "question",
     "description": ""
   },
   "options": {
@@ -12,16 +12,26 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Question": {
+    "question": {
       "type": "string"
-    },
-    "Response": {
-      "type": "text"
     },
     "quiz": {
       "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::quiz.quiz",
+      "inversedBy": "questions"
+    },
+    "reponse": {
+      "type": "relation",
       "relation": "oneToOne",
-      "target": "api::quiz.quiz"
+      "target": "api::choix.choix",
+      "inversedBy": "estReponse"
+    },
+    "choix": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::choix.choix",
+      "mappedBy": "associe"
     }
   }
 }

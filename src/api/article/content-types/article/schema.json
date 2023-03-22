@@ -4,7 +4,7 @@
   "info": {
     "singularName": "article",
     "pluralName": "articles",
-    "displayName": "Article",
+    "displayName": "article",
     "description": ""
   },
   "options": {
@@ -12,33 +12,47 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Titre": {
-      "type": "text"
-    },
-    "ContenuCourt": {
+    "titre": {
       "type": "string"
     },
-    "ContenuLong": {
+    "contenuCourt": {
+      "type": "string"
+    },
+    "contenuLong": {
       "type": "text"
     },
-    "Like": {
-      "type": "boolean"
-    },
-    "Lat": {
+    "latitude": {
       "type": "decimal"
     },
-    "Lont": {
+    "longitude": {
       "type": "decimal"
     },
-    "commentaire": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::commentaire.commentaire"
+    "like": {
+      "type": "integer"
     },
-    "media": {
+    "payss": {
       "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::med.med"
+      "relation": "manyToMany",
+      "target": "api::pays.pays",
+      "inversedBy": "articles"
+    },
+    "sousthemes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::soustheme.soustheme",
+      "inversedBy": "articles"
+    },
+    "medias": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::med.med",
+      "mappedBy": "articles"
+    },
+    "commentaires": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::commentaire.commentaire",
+      "mappedBy": "article"
     }
   }
 }

@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "themes",
+  "info": {
+    "singularName": "theme",
+    "pluralName": "themes",
+    "displayName": "theme",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nom": {
+      "type": "string"
+    },
+    "sousthemes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::soustheme.soustheme",
+      "mappedBy": "theme"
+    },
+    "payss": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::pays.pays",
+      "inversedBy": "themes"
+    }
+  }
+}

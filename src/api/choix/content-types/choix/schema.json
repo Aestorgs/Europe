@@ -12,13 +12,20 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Nom": {
+    "nom": {
       "type": "string"
     },
-    "question": {
+    "estReponse": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "api::question.question"
+      "target": "api::question.question",
+      "mappedBy": "reponse"
+    },
+    "associe": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::question.question",
+      "inversedBy": "choix"
     }
   }
 }

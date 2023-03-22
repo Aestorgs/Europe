@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sousthemes",
+  "info": {
+    "singularName": "soustheme",
+    "pluralName": "sousthemes",
+    "displayName": "soustheme",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nom": {
+      "type": "string"
+    },
+    "quizzes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::quiz.quiz",
+      "mappedBy": "sousthemes"
+    },
+    "theme": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::theme.theme",
+      "inversedBy": "sousthemes"
+    },
+    "articles": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::article.article",
+      "mappedBy": "sousthemes"
+    }
+  }
+}

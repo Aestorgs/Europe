@@ -4,7 +4,7 @@
   "info": {
     "singularName": "commentaire",
     "pluralName": "commentaires",
-    "displayName": "Commentaire",
+    "displayName": "commentaire",
     "description": ""
   },
   "options": {
@@ -12,11 +12,11 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Name": {
+    "nom": {
       "type": "text",
       "required": true
     },
-    "Date": {
+    "date": {
       "type": "datetime"
     },
     "contenu": {
@@ -24,8 +24,9 @@
     },
     "article": {
       "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::article.article"
+      "relation": "manyToOne",
+      "target": "api::article.article",
+      "inversedBy": "commentaires"
     }
   }
 }
