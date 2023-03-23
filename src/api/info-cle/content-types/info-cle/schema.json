@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "info_cles",
+  "info": {
+    "singularName": "info-cle",
+    "pluralName": "info-cles",
+    "displayName": "Info cle",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "devise": {
+      "type": "string",
+      "required": false
+    },
+    "hymne": {
+      "type": "string"
+    },
+    "feteNational": {
+      "type": "date"
+    },
+    "formeDeLetat": {
+      "type": "text"
+    },
+    "demographie": {
+      "type": "text"
+    },
+    "article": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::article.article",
+      "inversedBy": "info_cle"
+    }
+  }
+}

@@ -53,6 +53,15 @@
       "relation": "oneToMany",
       "target": "api::commentaire.commentaire",
       "mappedBy": "article"
+    },
+    "info_cle": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::info-cle.info-cle",
+      "inversedBy": "article"
+    },
+    "funFact": {
+      "type": "text"
     }
   }
 }
